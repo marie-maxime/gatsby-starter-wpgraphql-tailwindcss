@@ -1,0 +1,102 @@
+{
+  "name": "gatsby-wordpress-graphql-tailwind",
+  "private": true,
+  "description": "A Gatsby starter template for Wordpress with wp graphql and tailwindcss",
+  "version": "1.0.0",
+  "author": "Marie-Maxime Tanguay <hey@mariemaxime.dev>",
+  "homepage": "https://github.com/marie-maxime/gatsby-wordpress-graphql",
+  "keywords": [
+    "gatsby",
+    "gatsby-starter",
+    "gatsby-starter-template",
+    "graphql",
+    "wp-graphql"
+  ],
+  "license": "MIT",
+  "scripts": {
+    "build": "npm run purgeCache && cp ./src/environments/.env.production ./.env.production && gatsby build",
+    "start": "npm run purgeCache && cp ./src/environments/.env.development ./.env.development && gatsby develop",
+    "serve": "npm run purgeCache && cp ./src/environments/.env.development ./.env.development && gatsby build && gatsby serve",
+    "lint": "eslint --color --no-error-on-unmatched-pattern --ext .js ./src/**",
+    "purgeAll": "rm -rf node_modules && rm -rf yarn.lock rm -rf package-lock.json && rm -rf .cache && rm -rf public && npm install",
+    "purgeCache": "rm -rf .cache && rm -rf public",
+    "purgeDependencies": "rm -rf node_modules && rm -rf yarn.lock rm -rf package-lock.json && npm install"
+  },
+  "dependencies": {
+    "babel-eslint": "^10.0.1",
+    "eslint": "^6.8.0",
+    "eslint-config-google": "^0.10.0",
+    "eslint-config-prettier": "^3.1.0",
+    "eslint-plugin-flow-vars": "^0.5.0",
+    "eslint-plugin-flowtype": "^2.50.3",
+    "eslint-plugin-import": "^2.14.0",
+    "eslint-plugin-jsx-a11y": "^6.1.2",
+    "eslint-plugin-prettier": "^3.0.0",
+    "eslint-plugin-react": "^7.11.1",
+    "gatsby": "^2.19.7",
+    "gatsby-image": "^2.2.39",
+    "gatsby-paginate": "^1.0.0",
+    "gatsby-plugin-advanced-sitemap": "^1.0.0",
+    "gatsby-plugin-catch-links": "^2.1.13",
+    "gatsby-plugin-google-analytics": "^2.1.35",
+    "gatsby-plugin-import": "^2.0.0",
+    "gatsby-plugin-manifest": "^2.2.39",
+    "gatsby-plugin-offline": "^3.0.32",
+    "gatsby-plugin-react-helmet": "^3.1.21",
+    "gatsby-plugin-robots-txt": "^1.0.0",
+    "gatsby-plugin-sass": "^2.0.0",
+    "gatsby-plugin-sharp": "^2.4.3",
+    "gatsby-plugin-typescript": "^2.0.0",
+    "gatsby-source-filesystem": "^2.1.46",
+    "gatsby-source-graphql": "^2.1.33",
+    "gatsby-source-wpgraphql-images": "^0.3.7",
+    "gatsby-transformer-sharp": "^2.5.10",
+    "gatsby-transformer-yaml": "^2.0.0",
+    "gatsby-wpgraphql-inline-images": "^0.2.5",
+    "lodash": "^4.17.11",
+    "path": "^0.12.7",
+    "prop-types": "^15.7.2",
+    "react": "^16.12.0",
+    "react-dom": "^16.12.0",
+    "react-helmet": "^5.2.1"
+  },
+  "devDependencies": {
+    "@emotion/core": "^10.0.28",
+    "@emotion/styled": "^10.0.27",
+    "babel-plugin-import": "^1.0.0",
+    "dotenv": "^8.0.0",
+    "gatsby-plugin-emotion": "^4.3.9",
+    "husky": "^3.0.0",
+    "node-sass": "^4.0.0",
+    "source-map-explorer": "^2.0.0",
+    "tailwindcss": "^1.4.6",
+    "twin.macro": "^1.4.1"
+  },
+  "husky": {
+    "hooks": {
+      "pre-commit": "npm run lint",
+      "pre-push": "npm run build && git add public && git commit -m 'fix: updated public folder for release'"
+    }
+  },
+  "browserslist": [
+    ">0.2%",
+    "not dead",
+    "not ie <= 11",
+    "not op_mini all"
+  ],
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/marie-maxime/gatsby-starter-wpgraphql-tailwindcss"
+  },
+  "bugs": {
+    "url": "https://github.com/marie-maxime/gatsby-starter-wpgraphql-tailwindcss/issues"
+  },
+  "babelMacros": {
+    "twin": {
+      "config": "./tailwind.config.js",
+      "preset": "emotion",
+      "hasSuggestions": true,
+      "debug": false
+    }
+  }
+}
