@@ -1,17 +1,23 @@
 import React from "react"
 import Header from "./Header"
 import Footer from "./Footer"
+import Body from "./Body"
+import Wrapper from "./Wrapper"
+import Main from "./Main"
+import "twin.macro"
 
 const Layout = ({ children }) => (
-  <div id={`GatsbyBody`}>
-    <Header />
+  <Body id={`GatsbyBody`}>
+    <Wrapper id="wrapper">
+      <Header />
 
-    <main id="site-content" role="main">
-      {children}
-    </main>
+      <Main id="site-content" role="main">
+        {children}
+      </Main>
 
-    <Footer />
-  </div>
+      <Footer />
+    </Wrapper>
+  </Body>
 )
 
 export default Layout
