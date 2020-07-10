@@ -74,8 +74,7 @@
   },
   "husky": {
     "hooks": {
-      "pre-commit": "npm run lint",
-      "pre-push": "npm run build && git add public && git commit -m 'fix: updated public folder for release'"
+      "pre-commit": "npm run lint"
     }
   },
   "browserslist": [
