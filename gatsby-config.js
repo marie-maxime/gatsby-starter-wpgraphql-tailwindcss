@@ -9,11 +9,8 @@ module.exports = {
     author: `@${process.env.GATSBY_SITE_AUTHOR}`,
     siteUrl: `${process.env.GATSBY_SITE_URL_PROTOCOL}://${process.env.GATSBY_SITE_URL_PATH}`,
     social: {
-      twitter: `https://www.twitter.com/_marie_maxime`,
-      facebook: ``,
-      email: `hello@mariemaxime.dev`,
-      linkedin: `https://www.linkedin.com/in/marie-maxime-tanguay-a9436b104/`,
-      github: `https://www.github.com/marie-maxime`,
+      twitter: `@${process.env.GATSBY_TWITTER_HANDLE_URL}`,
+      email: `${process.env.GATSBY_EMAIL}`,
     },
   },
   plugins: [

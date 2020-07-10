@@ -39,7 +39,7 @@ const Seo = ({ description, lang, title }) => (
             },
             {
               name: `twitter:creator`,
-              content: siteMetadata.author,
+              content: siteMetadata.social.twitter,
             },
             {
               name: `twitter:title`,
@@ -63,6 +63,9 @@ const detailsQuery = graphql`
         title
         description
         author
+        social {
+          twitter
+        }
       }
     }
   }

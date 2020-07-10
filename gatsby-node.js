@@ -108,7 +108,7 @@ exports.createPages = async ({ graphql, actions }) => {
       context: {
         // This is the $slug variable
         // passed to blog-post.js
-        slug: node.slug,
+        slug: node.uri,
         databaseId: node.databaseId,
       },
     })
@@ -157,7 +157,7 @@ exports.createPages = async ({ graphql, actions }) => {
       context: {
         // This is the $slug variable
         // passed to blog-post.js
-        slug: node.slug,
+        slug: node.uri,
         databaseId: node.databaseId,
       },
     })
@@ -184,13 +184,14 @@ exports.createPages = async ({ graphql, actions }) => {
   `)
 
   categoryPageResults.data.wpgraphql.categories.edges.forEach(({ node }) => {
+    console.log(node)
     createPage({
       path: `${node.uri}`,
       component: path.resolve(`./src/templates/category-page-template.js`),
       context: {
         // This is the $slug variable
         // passed to blog-post.js
-        slug: node.slug,
+        slug: node.uri,
         databaseId: node.databaseId,
         name: node.name,
       },
@@ -224,7 +225,7 @@ exports.createPages = async ({ graphql, actions }) => {
       context: {
         // This is the $slug variable
         // passed to blog-post.js
-        slug: node.slug,
+        slug: node.uri,
         databaseId: node.databaseId,
         name: node.name,
       },

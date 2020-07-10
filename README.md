@@ -37,6 +37,12 @@ This is the name of the Gatsby site author
 - GATSBY_GOOGLE_ANALYTICS (Optional)
 This is your Google Analytics tracking id.
 
+- GATSBY_TWITTER_HANDLE_URL
+Twitter handle, used for meta data
+
+- GATSBY_EMAIL
+Admin / Site email
+
 Note: Any new environment variables you want to define MUST have the `GATSBY_` prefix. You can access them using `process.env.GATSBY_MY_ENVIRONMENT_VARIABLE`. Also, `process.env` object cannot be de-structured. To access any variable from this object, use the full variable name.
 
 For example, the following code will NOT work.

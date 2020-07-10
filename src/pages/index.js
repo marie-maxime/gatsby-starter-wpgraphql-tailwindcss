@@ -172,6 +172,7 @@ export const pageQuery = graphql`
             id
             name
             slug
+            uri
           }
         }
       }
